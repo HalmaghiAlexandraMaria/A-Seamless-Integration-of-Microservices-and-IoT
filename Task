@@ -1,0 +1,43 @@
+EN
+The project will combine the development of microservices with the IoT domain and has the following statement:
+
+Develop a software application based on the client-server communication model, aimed at providing data collected from a network of sensors. 
+The application can be developed using any programming language (Java, Python, etc.) and must meet the following requirements:
+- Communication between client and application (server) will be done using the HTTP protocol (optionally HTTPS can be implemented).
+- curl will be used as the client for testing.
+- The application will expose an API that allows querying the data provided by the sensor network. 
+Data from a specific sensor or group of sensors can be queried. The sensor/group identifier will be sent as a parameter when calling the API.
+- Sensors are considered to operate asynchronously (the sensor will generate data corresponding to a reading and then enter a latent/off state).
+Sensor data will be transmitted using the MQTT protocol to a broker system. 
+The broker system can be local or in the cloud (e.g., broker.hivemq.com).
+- Sensors will be simulated using a script that generates corresponding data.
+- The application must be runnable as a Docker container. A Dockerfile will be implemented for generating a Docker image.
+- Optional: The application will receive configuration data (e.g., broker URL) as an environment variable.
+
+The application must function as follows:
+
+The client (curl) will initiate a call to the application (API) to query data from a specific sensor. 
+Upon receiving this call, the application will connect to the broker and retrieve data published by the sensor (or sensor group). 
+The data read from the broker will be returned as the result of the call.
+After reading the data, communication with the broker will be closed.
+
+RO
+Proiectul va combina partea de dezvoltarea a microserviciilor cu zona de IoT si are urmatorul enunt:
+
+Dezvoltati o aplicatie software, bazata pe modelul de comunicatie client-server, care are rolul de a furniza date colectate de la o retea de senzori.
+Aplicatia poate fi dezvoltata folosind orice limbaj de programare (Java, Python, etc) si trebuie sa indeplineasca urmatoarele cerinte:
+- comunicatia dintre client si aplicatie (server) se va realiza folosind protocolul HTTP (optional poate fi implementat HTTPS)
+- clientul folosit pentru testare va fi curl
+- aplicatia va expune un API care permite interogarea datelor furnizate de reteaua de senzori. Se pot interoga datele furnizate de un anumit senzor sau de un grup de senzori.
+Identificatorul senzorului/grupului de senzori va fi trimis ca parametru in momentul apelarii API
+- se considera ca senzorii functioneaza in mod asincron (senzorul va genera datele corespunzatoare unei citiri si apoi va intra in stare latenta/oprit).
+Datele furnizate de senzori vor fi transmise folosind protocolul MQTT catre un sistem de tip broker. Sistemul de tip broker poate fi local sau in cloud (de ex broker.hivemq.com)
+- senzorii vor fi simulati prin intermediul unui script care va genera datele corespunzatoare
+- aplicatia trebuie sa poata fi rulata sub forma unui container Docker. Se va implementa un fisier de tip Dockerfile folosit pentru generarea unei imagini de tip Docker
+- Optional: aplicatia va primi datele de configurare (de ex. URL-ul pentru broker) sub forma unei variabile de mediu.
+
+Aplicatia trebuie sa functioneze in urmatorul mod:
+
+clientul (curl) va initia un apel catre aplicatie (API) prin care se interogheaza datele furnizate de un anumit senzor.
+La receptia acestui apel, aplicatia se va conecta la broker si va prelua datele publicate de catre senzor (respectiv grupul de senzori).
+Datele citite de la broker vor fi returnate ca rezultat al apelului. Dupa ctitirea datelor comunicatia cu broker-ul va fi inchisa.
